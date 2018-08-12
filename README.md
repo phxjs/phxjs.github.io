@@ -8,5 +8,6 @@ https://www.meetup.com/Phoenix-JavaScript/
 - define workshop structures
 - platform for trying things out
 
-https://github.com/samrocksc/awesome-phoenix
-https://phxtech.rocks/
+## cool references
+- https://github.com/samrocksc/awesome-phoenix
+- https://phxtech.rocks/
