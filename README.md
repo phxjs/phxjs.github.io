@@ -7,3 +7,6 @@ https://www.meetup.com/Phoenix-JavaScript/
 - meetup tie-in (linked up or maybe API)
 - define workshop structures
 - platform for trying things out
+
+https://github.com/samrocksc/awesome-phoenix
+https://phxtech.rocks/
