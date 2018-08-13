@@ -1,4 +1,4 @@
-# phx.js.org - WIP
+# [phx.js.org](https://phx.js.org/) - WIP
 
 https://www.meetup.com/Phoenix-JavaScript/
 
