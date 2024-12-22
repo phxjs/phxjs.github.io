@@ -1,0 +1,76 @@
+@import url(https://unpkg.com/open-color@1.9.1/open-color.css); /** docs: https://yeun.github.io/open-color/ **/
+@import url(https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
+html, body { margin: 0; padding: 0; }
+
+a {
+  color: var(--oc-blue-9);
+  text-decoration: none;
+  position: relative;
+}
+a::after {
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--oc-blue-9);
+  transition: all 250ms;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}
+a:focus, a:hover {
+  color: var(--oc-violet-9);
+}
+a:focus::after, a:hover::after {
+  width:100%;
+  background-color: var(--oc-violet-9);
+}
+
+
+html {
+  background-color: var(--oc-red-0);
+  color: var(--oc-gray-9);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--oc-gray-9);
+    color: var(--oc-gray-0);
+
+    .fa path { fill: var(--oc-gray-0); }
+
+    a {
+      color: var(--oc-blue-4);
+    }
+    a:focus, a:hover {
+      color: var(--oc-violet-4);
+    }
+    a:focus::after, a:hover::after {
+      background-color: var(--oc-violet-4);
+    }
+  }
+}
+
+body {
+  line-height: 26px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+ul {
+  padding-inline-start: 1em;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+
+  @media (min-width: 737px) {
+    max-width: 777px;
+  }
+}

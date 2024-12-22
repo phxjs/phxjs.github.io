@@ -1,4 +1,4 @@
-# [phx.js.org](https://phx.js.org/) - WIP
+# [phx.js.org](https://phx.js.org/)
 
 https://www.meetup.com/Phoenix-JavaScript/
 
@@ -8,7 +8,10 @@ https://www.meetup.com/Phoenix-JavaScript/
 - define workshop structures
 - platform for trying things out
 
-## cool references
+## cool sites, locations, events, conferences, conventions
+- https://halfstackconf.com/phoenix
+- https://www.cactuscon.com/
+- https://www.heatsynclabs.org/
+- https://cohoots.com/
+- https://codeday.org/phoenix
 - https://github.com/samrocksc/awesome-phoenix
-- https://phxtech.rocks/
-- https://www.azwebdevs.org/
