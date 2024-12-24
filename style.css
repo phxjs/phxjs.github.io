@@ -7,11 +7,7 @@
 }
 
 #logo__javascript {
-  fill: var(--oc-gray-9);;
-
-  @media (prefers-color-scheme: dark) {
-    fill: var(--oc-white);
-  }
+  fill: var(--text-color);
 }
 
 #grid {
@@ -25,7 +21,19 @@
 
 body:not(.mobile) {
   #grid {
-    margin-top: 25vh;
+    margin-top: 10vh;
+  }
+
+  #heading {
+    text-align: center;
+    width: 100%;
+  }
+
+  #content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 777px;
   }
 }
 

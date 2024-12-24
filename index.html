@@ -25,7 +25,11 @@
       }
     }
   </script>
+  <script defer type="module" src="base.js"></script>
   <script defer type="module" src="app.js"></script>
+  <script>
+    window.onbeforeunload = () => { window.scrollTo(0,0); };
+  </script>
 </head>
 
 <body>
@@ -33,7 +37,20 @@
     <span id="externalLinkMsg">will open a new tab</span>
   </div>
 
-  <div id="grid">
+  <ul id="nav-access" class="a11y-nav">
+    <li><a id="skip-main" href="#grid">Skip to main content</a></li>
+    <li><a id="skip-links" href="#links">Skip to links</a></li>
+    <li><a id="skip-color-scheme" href="#color-scheme">Skip to Color Theme</a></li>
+  </ul>
+
+  <label for="color-scheme">Color Theme </label>
+  <select id="color-scheme">
+    <option value="system" selected>System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+
+  <main id="grid">
     <h1 id="heading">
       <svg id="logo" role="img" aria-describedby="logo__title" xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 1418 400">
         <title id="logo__title">Phoenix JavaScript</title>
@@ -130,6 +147,6 @@
         </li>
       </ul>
     </div>
-  </div>
+  </main>
 </body>
 </html>

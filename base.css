@@ -2,10 +2,42 @@
 @import url(https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
 
+/** https://www.smashingmagazine.com/2024/03/setting-persisting-color-scheme-preferences-css-javascript/ **/
+:root {
+  /* light styles */
+  --color-scheme: var(--color-scheme, light);
+  --bg-color: var(--oc-red-0);
+  --text-color: var(--oc-gray-9);
+  --anchor-color: var(--oc-blue-9);
+  --anchor-color-active: var(--oc-violet-9);
+
+  /* page preference is "dark" */
+  &:has(#color-scheme option[value="dark"]:checked) {
+    /* any additional dark styles */
+    --color-scheme: dark;
+    --bg-color: var(--oc-gray-9);
+    --text-color: var(--oc-gray-0);
+    --anchor-color: var(--oc-blue-4);
+    --anchor-color-active: var(--oc-violet-4);
+  }
+
+  /* page preference is "system", and system preference is "dark" */
+  @media (prefers-color-scheme: dark) {
+    &:has(#color-scheme option[value="system"]:checked) {
+      /* any additional dark styles, again */
+      --color-scheme: dark;
+      --bg-color: var(--oc-gray-9);
+      --text-color: var(--oc-gray-0);
+      --anchor-color: var(--oc-blue-4);
+      --anchor-color-active: var(--oc-violet-4);
+    }
+  }
+}
+
 html, body { margin: 0; padding: 0; }
 
 a {
-  color: var(--oc-blue-9);
+  color: var(--anchor-color);
   text-decoration: none;
   position: relative;
 }
@@ -16,7 +48,7 @@ a::after {
   height:2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--oc-blue-9);
+  background-color: var(--anchor-color);
   transition: all 250ms;
 
   @media (prefers-reduced-motion) {
@@ -24,34 +56,17 @@ a::after {
   }
 }
 a:focus, a:hover {
-  color: var(--oc-violet-9);
+  color: var(--anchor-color-active);
 }
 a:focus::after, a:hover::after {
   width:100%;
-  background-color: var(--oc-violet-9);
+  background-color: var(--anchor-color-active);
 }
 
-
 html {
-  background-color: var(--oc-red-0);
-  color: var(--oc-gray-9);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--oc-gray-9);
-    color: var(--oc-gray-0);
-
-    .fa path { fill: var(--oc-gray-0); }
-
-    a {
-      color: var(--oc-blue-4);
-    }
-    a:focus, a:hover {
-      color: var(--oc-violet-4);
-    }
-    a:focus::after, a:hover::after {
-      background-color: var(--oc-violet-4);
-    }
-  }
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  .fa path { fill: var(--text-color); }
 }
 
 body {
@@ -73,4 +88,45 @@ ul {
   @media (min-width: 737px) {
     max-width: 777px;
   }
+}
+
+.a11y-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -2em;
+  width: 100%;
+  z-index: 99999999999999;
+
+  a {
+    background-color: transparent;
+    color: transparent;
+    font-weight: 800;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+
+    &:focus {
+      top: 2em;
+      padding: .8rem;
+      background-color: var(--bg-color);
+      color: var(--anchor-color-active);
+    }
+  }
+}
+
+label[for=color-scheme],
+select#color-scheme,
+select#color-scheme option {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.5em 0.25em;
+  border-width: 1px;
+  border-radius: 5px;
+  line-height: 26px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  margin-top:5px;
 }

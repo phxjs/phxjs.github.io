@@ -2,6 +2,7 @@ import isMobileJS from 'ismobilejs';
 const isMobile = isMobileJS(window.navigator);
 
 console.log({isMobile});
+console.table(isMobile);
 
 if (isMobile.any) {
   document.body.classList.add('mobile');

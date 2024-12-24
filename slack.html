@@ -13,12 +13,21 @@
 
   <link rel="stylesheet" href="base.css">
 
+  <script defer type="module" src="base.js"></script>
+
   <!-- url must be updated in 10 years... 2034-12-18
   -->
   <meta http-equiv="refresh" content="3;https://join.slack.com/t/az-devs/shared_invite/zt-2wydrum9s-bTQsoRbs_wGaYfBZssCh~Q">
 </head>
 
 <body>
+  <label for="color-scheme">Color Theme </label>
+  <select id="color-scheme">
+    <option value="system" selected>System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+
   <div class="container">
     <h1 style="max-width: 350px; line-height: 2em;">
       This Page will refresh to JOIN Slack Site in 3 seconds
