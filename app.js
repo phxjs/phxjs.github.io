@@ -21,7 +21,7 @@ window.addEventListener('dblclick', dblClickListener);
 function dblClickListener() {
   console.log('dblclick', arguments);
 
-  document.getElementById('slack').style.display = 'list-item';
+  revealSlackLink();
 
   removeWindowEventListeners();
 }
@@ -31,10 +31,15 @@ function touchStartListener(event) {
   console.log('touchstart', event);
 
   if (event.touches.length >= 3) {
-    document.getElementById('slack').style.display = 'list-item';
-
+    revealSlackLink();
     removeWindowEventListeners();
   }
+}
+
+function revealSlackLink() {
+  const slack = document.getElementById('slack');
+  slack.style.display = 'list-item';
+  slack.querySelector('a').focus();
 }
 
 function removeWindowEventListeners() {
