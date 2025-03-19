@@ -1,3 +1,9 @@
+const bscript = document.createElement('script');
+bscript.onerror = onErrorMouseTrapFailed;
+bscript.onload = onLoadBindSomeShortcuts;
+bscript.src = 'https://unpkg.com/mousetrap@1.6.5/mousetrap.js';
+document.head.appendChild(bscript);
+
 /* https://www.smashingmagazine.com/2024/03/setting-persisting-color-scheme-preferences-css-javascript/ */
 
 /*
@@ -33,20 +39,34 @@ function restoreColorSchemePreference() {
  * Store an event target's value in localStorage under colorSchemeStorageItemName
  */
 function storeColorSchemePreference({ target }) {
-  const colorScheme = target.querySelector(":checked").value;
+  const colorScheme = target.querySelector(':checked').value;
   localStorage.setItem(colorSchemeStorageItemName, colorScheme);
 }
 
 // The name under which the user's color scheme preference will be stored.
-const colorSchemeStorageItemName = "preferredColorScheme";
+const colorSchemeStorageItemName = 'preferredColorScheme';
 
 // The color scheme preference front-end UI.
-const colorSchemeSelectorEl = document.querySelector("#color-scheme");
+const colorSchemeSelectorEl = document.querySelector('#color-scheme');
 
 if (colorSchemeSelectorEl) {
   restoreColorSchemePreference();
 
   // When the user changes their color scheme preference via the UI,
   // store the new preference.
-  colorSchemeSelectorEl.addEventListener("input", storeColorSchemePreference);
+  colorSchemeSelectorEl.addEventListener('input', storeColorSchemePreference);
+}
+
+function onLoadBindSomeShortcuts() {
+  Mousetrap.bind('up up down down left right left right b a enter', () => {
+    alert('konami');
+  });
+
+  Mousetrap.bind('g i t', () => {
+    window.open('/git');
+  });
+}
+
+function onErrorMouseTrapFailed() {
+  console.error('Mouse did not get trapped');
 }
