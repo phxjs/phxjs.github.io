@@ -130,3 +130,7 @@ select#color-scheme option {
   font-size: 12px;
   margin-top:5px;
 }
+
+.hidden {
+  display: none;
+}

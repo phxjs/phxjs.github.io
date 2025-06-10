@@ -65,6 +65,22 @@ function onLoadBindSomeShortcuts() {
   Mousetrap.bind('g i t', () => {
     window.open('/git');
   });
+  
+  Mousetrap.bind('m e e t u p', () => {
+    window.open('/meetup');
+  });
+
+  Mousetrap.bind('r e a c t', () => {
+    window.open('https://www.meetup.com/phoenix-reactjs/');
+  });
+
+  Mousetrap.bind('s l a c k', () => {
+    window.open('/slack');
+  });
+
+  Mousetrap.bind('d i s c o r d', () => {
+    window.open('https://discord.gg/yaNcXzV4tr');
+  });
 }
 
 function onErrorMouseTrapFailed() {

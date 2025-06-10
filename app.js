@@ -17,6 +17,8 @@ const pre = document.createElement('pre');
 pre.innerText = JSON.stringify(isMobile, null, '    ');
 document.body.appendChild(pre);
 
+window.addEventListener('click', toggleUrl);
+
 window.addEventListener('dblclick', dblClickListener);
 function dblClickListener() {
   console.log('dblclick', arguments);
@@ -45,4 +47,9 @@ function revealSlackLink() {
 function removeWindowEventListeners() {
   window.removeEventListener('dblclick', dblClickListener);
   window.removeEventListener('touchstart', touchStartListener);
+}
+
+const urlEl = document.querySelector('#url');
+function toggleUrl(_event) {
+  urlEl.classList.toggle('hidden');
 }
