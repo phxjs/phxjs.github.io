@@ -74,6 +74,10 @@ function onLoadBindSomeShortcuts() {
     window.open('https://www.meetup.com/phoenix-reactjs/');
   });
 
+  Mousetrap.bind('r u s t', () => {
+    window.open('https://booze.rs/');
+  });
+
   Mousetrap.bind('s l a c k', () => {
     window.open('/slack');
   });
