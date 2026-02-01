@@ -65,6 +65,10 @@ function onLoadBindSomeShortcuts() {
   Mousetrap.bind('g i t', () => {
     window.open('/git');
   });
+
+  Mousetrap.bind('h s l', () => {
+    window.open('/hsl');
+  });
   
   Mousetrap.bind('m e e t u p', () => {
     window.open('/meetup');
