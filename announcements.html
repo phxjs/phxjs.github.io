@@ -1,8 +1,14 @@
 <html>
   <head>
     <title>PhxJS Announcements</title>
+    
     <link rel="preload" href="https://github.com/phxjs/.github/raw/main/profile/logo.svg" as="image" />
+    
     <base target="_blank" />
+    
+    <script defer type="module" src="base.js"></script>
+    
+    <link rel="stylesheet" href="base.css">
     <style>
       * {
         font-size: 60px;
@@ -21,6 +27,13 @@
       <summary>Coming UP in 2026</summary>
       
       <ul>
+      </ul>
+    </details>
+  
+    <details>
+      <summary>In the Past</summary>
+
+      <ul>
         <li>
           <a href="https://halfstackconf.com/phoenix">HalfStack Conference 2026 January 30 Friday</a>
           <p>
@@ -28,7 +41,7 @@
             A full event of tech talks, conversations, pub quizzes, and good foods and drinks with fellow developers and tech enthusiasts
           </p>
           <p>
-            Get your company and look into purchasing tickets soon! Or consider <a href="https://halfstackconf.com/phoenix/spon">Sponsorship</a>
+            Get your company and look into purchasing tickets next year! Or consider <a href="https://halfstackconf.com/phoenix/spon">Sponsorship</a>
           </p>
         </li>
         <li>
@@ -38,13 +51,6 @@
             <a href="https://www.cactuscon.com/what-we-do">Learn more about what they do!</a>
           </p>
         </li>
-      </ul>
-    </details>
-  
-    <details>
-      <summary>In the Past</summary>
-
-      <ul>
         <li>
           <a href="https://holidayjs.com/">Holiday.js</a>
           <div>
@@ -72,5 +78,12 @@ talks, prizes, 8-hour hackathon, food truck - what more could you ask for?
         </li>
       </ul>
     </details>
+    
+    <label for="color-scheme">Color Theme </label>
+    <select id="color-scheme">
+      <option value="system" selected>System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
   </body>
 </html>
